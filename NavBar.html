@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Responsive Navbar</title>
+  <style>
+    /* Navbar styles */
+    .navbar {
+      background-color: #333;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .navbar-brand {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .navbar-menu {
+      display: flex;
+    }
+
+    .navbar-item {
+      margin-left: 20px;
+      list-style: none;
+    }
+
+    .navbar-link {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Hamburger menu styles */
+    .hamburger-menu {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger-menu span {
+      height: 4px;
+      width: 25px;
+      background-color: #fff;
+      margin-bottom: 5px;
+    }
+
+    /* Media query for smaller screens */
+    @media screen and (max-width: 600px) {
+      .navbar-menu {
+        display: none;
+      }
+
+      .hamburger-menu {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">Logo</div>
+    <ul class="navbar-menu">
+      <li class="navbar-item"><a class="navbar-link" href="#">Home</a></li>
+      <li class="navbar-item"><a class="navbar-link" href="#">About</a></li>
+      <li class="navbar-item"><a class="navbar-link" href="#">Services</a></li>
+      <li class="navbar-item"><a class="navbar-link" href="#">Contact</a></li>
+    </ul>
+    <div class="hamburger-menu" onclick="toggleNavbar()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <script>
+    function toggleNavbar() {
+      var navbarMenu = document.querySelector('.navbar-menu');
+      navbarMenu.style.display = navbarMenu.style.display === 'none' ? 'flex' : 'none';
+    }
+  </script>
+</body>
+</html>
