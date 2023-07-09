@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Input App</title>
+  <style>
+    #input-box {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <input type="text" id="input-box" placeholder="Type something">
+    <button id="submit-btn">Submit</button>
+  </div>
+  <ul id="output-list"></ul>
+
+  <script src="script.js"></script>
+   <script>
+     document.addEventListener('DOMContentLoaded', function() {
+  var inputBox = document.getElementById('input-box');
+  var submitButton = document.getElementById('submit-btn');
+  var outputList = document.getElementById('output-list');
+
+  submitButton.addEventListener('click', function() {
+    var inputValue = inputBox.value;
+    if (inputValue.trim() !== '') {
+      var listItem = document.createElement('li');
+      listItem.textContent = inputValue;
+      outputList.appendChild(listItem);
+      inputBox.value = '';
+    }
+  });
+});
+
+   </script>
+</body>
+</html>
